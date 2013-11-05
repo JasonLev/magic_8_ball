@@ -1,12 +1,14 @@
 <h1>JL's Magic 8 Ball</h1>
 <%= form_for @question do |f| %>
-  <%= f.text_area :text, placeholder: "Enter a question!" %>
+  <%= f.text_area :text, placeholder: "Enter a question!" %><br>
   <%= f.submit %>
 <% end %>
 <!-- show each question -->
+<div id="questions">
 <% @questions.each do |question| %>
   <div>
-  <% question.text %><br>
-  <% question.answers.last %>
+  <%= question.text %><br>
+  <%= question.answers.last.text %>
   </div>
 <% end %>
+</div>
